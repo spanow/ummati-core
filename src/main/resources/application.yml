@@ -1,0 +1,22 @@
+server:
+  port: 8081 # Le port sur lequel le service va ?couter
+
+spring:
+  application:
+    name: orga-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/orga_db
+    username: postgres
+    password: root
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update # Utiliser 'update' pour les environnements de développement, 'validate' ou 'none' pour la production
+    show-sql: true # Pour afficher les requêtes SQL dans les logs
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+logging:
+  level:
+    org:
+      springframework: INFO
+      hibernate: DEBUG
